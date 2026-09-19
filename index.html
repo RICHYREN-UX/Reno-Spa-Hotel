@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reno Spa | 5-Star Luxury Hotel in 	Mombasa Beach, Kenya</title>
+  <meta name="description" content="Reno Spa – a five-star luxury hotel in on the Shores of Mombasa, Reno. Luxury rooms and suites, fine dining, spa, afternoon tea and exclusive offers.">
+  <meta name="theme-color" content="#0a1a33">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Reno Spa Hotel and Spa – Home">
+        <span class="brand-crest"><i class="fa-solid fa-crown"></i></span>
+        <span class="brand-text">
+          <strong>Reno Spa</strong>
+          <small>Mombasa, Kenya</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#rooms" class="nav-link">Rooms &amp; Suites</a></li>
+          <li><a href="#dining" class="nav-link">Dining</a></li>
+          <li><a href="#amenities" class="nav-link">Amenities</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#booking" class="btn btn-gold nav-cta">Book Now</a>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow eyebrow-light hero-anim" style="--d:.1s"><i class="fa-solid fa-star"></i> Five-Star Luxury &nbsp;·&nbsp; 	Mombasa Beach, Kenya</p>
+        <h1 class="hero-anim" style="--d:.25s">RENO <span>SPA</span></h1>
+        
+        <div class="hero-buttons hero-anim" style="--d:.55s">
+          <a href="#booking" class="btn btn-gold btn-lg">Book Your Stay</a>
+          <a href="#rooms" class="btn btn-outline-light btn-lg">Explore Rooms</a>
+        </div>
+      </div><p class="hero-tagline hero-anim" style="--d:.4s">Luxury, refined on the shores of Mombasa.</p>
+
+      <div class="container search-wrap hero-anim" style="--d:.75s">
+        <form class="search-bar" id="searchForm" novalidate>
+          <div class="s-field">
+            <label for="sCheckin"><i class="fa-regular fa-calendar"></i> Check-in</label>
+            <input type="date" id="sCheckin" required>
+          </div>
+          <div class="s-field">
+            <label for="sCheckout"><i class="fa-regular fa-calendar-check"></i> Check-out</label>
+            <input type="date" id="sCheckout" required>
+          </div>
+          <div class="s-field">
+            <label for="sGuests"><i class="fa-regular fa-user"></i> Guests</label>
+            <select id="sGuests">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+              <option value="7">7 Guests</option>
+              <option value="8">8 Guests</option>
+            </select>
+          </div>
+          <div class="s-field">
+            <label for="sRooms"><i class="fa-solid fa-door-open"></i> Rooms</label>
+            <select id="sRooms">
+              <option value="1" selected>1 Room</option>
+              <option value="2">2 Rooms</option>
+              <option value="3">3 Rooms</option>
+              <option value="4">4 Rooms</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-gold search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search Availability</button>
+        </form>
+        <p class="search-error" id="searchError" role="alert"></p>
+      </div>
+    </section>
+
+    <!-- ================= ROOMS ================= -->
+    <section class="section section-cream" id="rooms">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Rooms &amp; Suites</p>
+          <h2>Your Home in Reno Spa</h2>
+          <span class="gold-line"></span>
+          <p class="lead">Four collections of beautifully appointed accommodation, each dressed in Egyptian cotton, hand-finished marble and the quiet confidence of British craftsmanship.</p>
+        </div>
+        <div class="availability-msg" id="availabilityMsg" role="status" aria-live="polite"></div>
+        <div class="rooms-grid" id="roomsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= DINING ================= -->
+    <section class="section section-navy" id="dining">
+      <div class="container">
+        <div class="section-head section-head-light reveal">
+          <p class="eyebrow eyebrow-light">Dining</p>
+          <h2>A Table Worth Travelling For</h2>
+          <span class="gold-line"></span>
+          <p class="lead">From seasonal British tasting menus to champagne afternoon tea, every meal at Reno Spa is an occasion.</p>
+        </div>
+
+        <div class="dining-grid">
+          <article class="dining-card reveal">
+            <div class="dining-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" alt="The Royal Crown Restaurant fine dining" loading="lazy"></div>
+            <div class="dining-body">
+              <span class="dining-tag">Fine Dining</span>
+              <h3>The Royal Crown Restaurant</h3>
+              <p>Our signature restaurant serves modern British cuisine, built around seasonal produce from small farms across the Home Counties and paired with an exceptional wine list.</p>
+              <ul class="hours">
+                <li><i class="fa-regular fa-clock"></i> Breakfast 07:00 – 10:30</li>
+                <li><i class="fa-regular fa-clock"></i> Lunch 12:00 – 14:30</li>
+                <li><i class="fa-regular fa-clock"></i> Dinner 18:00 – 22:30</li>
+              </ul>
+              <a href="#contact" class="text-link">Reserve a table <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="dining-card reveal">
+            <div class="dining-img"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=1000&q=80" alt="Reno Spa Lounge" loading="lazy"></div>
+            <div class="dining-body">
+              <span class="dining-tag">Lounge</span>
+              <h3>Reno Spa Lounge</h3>
+              <p>A relaxed, elegant space for morning coffee, light lunches and evening small plates, with live piano music from Thursday to Sunday.</p>
+              <ul class="hours">
+                <li><i class="fa-regular fa-clock"></i> Daily 10:00 – 23:00</li>
+                <li><i class="fa-solid fa-music"></i> Live piano Thu – Sun, 19:00</li>
+              </ul>
+              <a href="#contact" class="text-link">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="dining-card reveal">
+            <div class="dining-img"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1000&q=80" alt="The Gold Bar cocktails" loading="lazy"></div>
+            <div class="dining-body">
+              <span class="dining-tag">Cocktails &amp; Whisky</span>
+              <h3>The Gold Bar</h3>
+              <p>An intimate, gilded cocktail bar with a curated collection of rare whiskies, vintage champagnes and inventive drinks crafted by our award-worthy mixologists.</p>
+              <ul class="hours">
+                <li><i class="fa-regular fa-clock"></i> Mon – Sat 16:00 – 01:00</li>
+                <li><i class="fa-regular fa-clock"></i> Sunday 16:00 – 23:00</li>
+              </ul>
+              <a href="#contact" class="text-link">Enquire <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="dining-card reveal">
+            <div class="dining-img"><img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=1000&q=80" alt="Afternoon tea at Reno Spa" loading="lazy"></div>
+            <div class="dining-body">
+              <span class="dining-tag">Signature Experience</span>
+              <h3>Afternoon Tea</h3>
+              <p>A very British tradition, served beneath the glass roof of our Winter Garden: finger sandwiches, warm scones, delicate pastries and our Royal Blend tea.</p>
+              <ul class="hours">
+                <li><i class="fa-regular fa-clock"></i> Daily 12:00 – 17:00</li>
+                <li><i class="fa-solid fa-champagne-glasses"></i> Champagne option available</li>
+              </ul>
+              <button type="button" class="text-link text-link-btn" data-offer="afternoon">Book afternoon tea <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AMENITIES ================= -->
+    <section class="section section-ivory" id="amenities">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Amenities</p>
+          <h2>Every Detail, Considered</h2>
+          <span class="gold-line"></span>
+          <p class="lead">Thoughtful facilities and effortless service so that you can simply arrive, unwind and enjoy mombasa.</p>
+        </div>
+        <div class="amenities-grid">
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-spa"></i></div><h3>Luxury Spa</h3><p>Ten treatment rooms, hydrotherapy suite, sauna and steam room.</p></div>
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-water-ladder"></i></div><h3>Indoor Swimming Pool</h3><p>A 20-metre heated pool beneath a starlit ceiling.</p></div>
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-dumbbell"></i></div><h3>Fitness Centre</h3><p>Technogym equipment, personal trainers and daily studio classes.</p></div>
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-wifi"></i></div><h3>Free Wi-Fi</h3><p>Fast, secure fibre broadband throughout the hotel.</p></div>
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-bell-concierge"></i></div><h3>24/7 Concierge</h3><p>Theatre tickets, private tours and hard-to-book tables, arranged.</p></div>
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-plane-departure"></i></div><h3>Airport Transfers</h3><p>Chauffeur-driven transfers to Heathrow, Gatwick and City airports.</p></div>
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-utensils"></i></div><h3>Room Service</h3><p>Gourmet dining in the privacy of your room, around the clock.</p></div>
+          <div class="amenity reveal"><div class="amenity-icon"><i class="fa-solid fa-car"></i></div><h3>Valet Parking</h3><p>Secure underground parking with a dedicated valet team.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="section section-cream" id="gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Gallery</p>
+          <h2>A Glimpse of Reno Spa</h2>
+          <span class="gold-line"></span>
+          <p class="lead">Tap or click any image to view it full size.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section section-ivory" id="about">
+      <div class="container about-grid">
+        <div class="about-images reveal">
+          <img class="about-img-main" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80" alt="Reno Spa Hotel exterior" loading="lazy">
+          <img class="about-img-small" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=700&q=80" alt="Elegant hotel lobby interior" loading="lazy">
+          <div class="about-badge"><strong>1897</strong><span>Welcoming guests since</span></div>
+        </div>
+        <div class="about-text reveal">
+          <p class="eyebrow">About Reno Spa</p>
+          <h2>A Century of British Hospitality</h2>
+          <span class="gold-line left"></span>
+          <p>Reno Spa began life in 1897 as a grand private townhouse, built for a family of Victorian merchants who loved to entertain. In 1924 its doors opened to the public as a small, exclusive hotel, and a reputation for warm, unhurried service was born.</p>
+          <p>After a sensitive restoration in 2019, the hotel now blends its original Edwardian architecture (sweeping staircases, plasterwork ceilings and a glass-roofed Winter Garden) with contemporary comfort. Our 214 rooms and suites are individually designed, and our team of more than 300 colleagues live by one principle: <em>true luxury is being remembered.</em></p>
+          <p>Set on a quiet, tree-lined street moments from Reno Gardens, we are perfectly placed for museums, shopping, theatre and the very best of Mombasa.</p>
+          <ul class="about-list">
+            <li><i class="fa-solid fa-check"></i> Elegant rooms &amp; suites with Hyde Park views</li>
+            <li><i class="fa-solid fa-check"></i> Exceptional, personalised service</li>
+            <li><i class="fa-solid fa-check"></i> Prime central Mombasa location</li>
+          </ul>
+          <div class="stats">
+            <div><strong data-count="214">0</strong><span>Rooms &amp; Suites</span></div>
+            <div><strong data-count="4">0</strong><span>Restaurants &amp; Bars</span></div>
+            <div><strong data-count="300" data-suffix="+">0</strong><span>Dedicated Colleagues</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OFFERS ================= -->
+    <section class="section section-navy" id="offers">
+      <div class="container">
+        <div class="section-head section-head-light reveal">
+          <p class="eyebrow eyebrow-light">Special Offers</p>
+          <h2>Exclusive Experiences</h2>
+          <span class="gold-line"></span>
+          <p class="lead">Handpicked packages that include the extras our guests love most.</p>
+        </div>
+        <div class="offers-grid" id="offersGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="section section-cream" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Guest Reviews</p>
+          <h2>Words From Our Guests</h2>
+          <span class="gold-line"></span>
+          <p class="lead"><span class="rating-big">4.9</span> out of 5 from more than 2,300 verified guests.</p>
+        </div>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial reveal">
+            <i class="fa-solid fa-quote-left quote-mark"></i>
+            <div class="stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>Impeccable from the moment we arrived. The Grand Royal Suite was breathtaking, and the concierge arranged a surprise for our anniversary that we'll never forget.</p>
+            <footer><span class="avatar">CW</span><div><strong>Charlotte Whitmore</strong><small>Edinburgh · Anniversary stay</small></div></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <i class="fa-solid fa-quote-left quote-mark"></i>
+            <div class="stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>The best afternoon tea we've had in Mombasa, and we've tried many. Staff were warm without ever being stuffy. The spa afterwards was pure bliss.</p>
+            <footer><span class="avatar">PA</span><div><strong>Priya Anand</strong><small>Diani · Weekend Escape</small></div></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <i class="fa-solid fa-quote-left quote-mark"></i>
+            <div class="stars" aria-label="4 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+            <p>Superb location for business in Reno Spa and the Executive Suite made working from the hotel a pleasure. Breakfast was excellent; the lift was a little busy at peak times.</p>
+            <footer><span class="avatar">OH</span><div><strong>Oliver Hartley</strong><small>Bristol · Business travel</small></div></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <i class="fa-solid fa-quote-left quote-mark"></i>
+            <div class="stars" aria-label="5 out of 5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>We celebrated a family birthday in the Presidential Suite. Private dining, a butler who anticipated everything and views over the rooftops. Truly world class.</p>
+            <footer><span class="avatar">SM</span><div><strong>Sofia Marchetti</strong><small>Milan · Family celebration</small></div></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LOCATION ================= -->
+    <section class="section section-ivory" id="location">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Location</p>
+          <h2>On the Shores of Mombasa</h2>
+          <span class="gold-line"></span>
+          <p class="lead">Steps from golden sands, historic Old Town and the best of Kenya's coast.</p>
+        </div>
+        <div class="location-grid">
+          <div class="location-info reveal">
+            <h3><i class="fa-solid fa-location-dot"></i> 	Mombasa Beach, Kenya</h3>
+            <p>1 Mombasa Beach Road, Mombasa, Keny</p>
+            <ul class="attractions">
+              <ul class="attractions">
+  <li><span class="att-icon"><i class="fa-solid fa-umbrella-beach"></i></span><div><strong>Mombasa Beach</strong><small>2 min walk</small></div></li>
+  <li><span class="att-icon"><i class="fa-solid fa-chess-rook"></i></span><div><strong>Fort Jesus</strong><small>20 min by car</small></div></li>
+  <li><span class="att-icon"><i class="fa-solid fa-landmark"></i></span><div><strong>Mombasa Old Town</strong><small>20 min by car</small></div></li>
+  <li><span class="att-icon"><i class="fa-solid fa-tree"></i></span><div><strong>Haller Park</strong><small>25 min by car</small></div></li>
+  <li><span class="att-icon"><i class="fa-solid fa-bag-shopping"></i></span><div><strong>Nyali City Mall</strong><small>10 min by car</small></div></li>
+</ul>
+<div class="transport">
+  <span><i class="fa-solid fa-plane"></i> Moi International Airport – 30 min</span>
+  <span><i class="fa-solid fa-taxi"></i> Airport transfers available</span>
+</div>
+          </div>
+          <div class="map-wrap reveal">
+            <iframe title="Map of Mombasa Beach, Kenya" src="https://www.google.com/maps?q=Mombasa+Beach,+Mombasa,+Kenya&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BOOKING ================= -->
+    <section class="section section-sand" id="booking">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Reservations</p>
+          <h2>Book Your Stay</h2>
+          <span class="gold-line"></span>
+          <p class="lead">Choose your room or package, add your extras, and see your price update instantly. Your booking is confirmed and registered immediately.</p>
+        </div>
+
+        <div class="booking-grid">
+          <form class="form-card reveal" id="bookingForm" novalidate>
+            <h3 class="form-title">Guest &amp; Stay Details</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label for="bkName">Guest name *</label>
+                <input type="text" id="bkName" placeholder="e.g. Alexandra Bennett" autocomplete="name">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="bkEmail">Email *</label>
+                <input type="email" id="bkEmail" placeholder="you@example.com" autocomplete="email">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="bkPhone">Phone *</label>
+                <input type="tel" id="bkPhone" placeholder="+44 7700 900123" autocomplete="tel">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="bkRoom">Room type / package *</label>
+                <select id="bkRoom"></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="bkCheckin">Check-in date *</label>
+                <input type="date" id="bkCheckin">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="bkCheckout">Check-out date *</label>
+                <input type="date" id="bkCheckout">
+                <span class="error-msg"></span>
+              </div>
+              <p class="date-hint full" id="bkDateHint"></p>
+              <div class="field">
+                <label for="bkGuests">Number of guests *</label>
+                <input type="number" id="bkGuests" min="1" max="12" value="2">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="bkRooms">Number of rooms *</label>
+                <select id="bkRooms">
+                  <option value="1">1 Room</option>
+                  <option value="2">2 Rooms</option>
+                  <option value="3">3 Rooms</option>
+                  <option value="4">4 Rooms</option>
+                </select>
+                <span class="error-msg"></span>
+              </div>
+            </div>
+
+            <h3 class="form-title extras-title">Enhance Your Stay <small>(optional)</small></h3>
+            <div class="extras-grid" id="extrasGrid"></div>
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="bkRequests">Special requests</label>
+                <textarea id="bkRequests" rows="3" placeholder="Anniversary celebration, dietary needs, late arrival, extra pillows…"></textarea>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field full">
+                <label class="check">
+                  <input type="checkbox" id="bkTerms">
+                  <span>I agree to the booking terms and free cancellation up to 48 hours before arrival. *</span>
+                </label>
+                <span class="error-msg"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-lg btn-block"><i class="fa-solid fa-lock"></i> Confirm Booking</button>
+          </form>
+
+          <aside class="summary-card reveal" aria-live="polite">
+            <h3><i class="fa-solid fa-receipt"></i> Your Order Summary</h3>
+            <div id="orderSummary"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section section-ivory" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>We'd Love to Hear From You</h2>
+          <span class="gold-line"></span>
+          <p class="lead">Questions about a stay, an event or a special occasion? Our reservations team is here to help.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="contact-item"><span class="ci-icon"><i class="fa-solid fa-phone"></i></span><div><strong>Phone</strong><a href="tel:+254741158822">0741 158 822</a></div></div>
+            <div class="contact-item"><span class="ci-icon"><i class="fa-solid fa-envelope"></i></span><div><strong>Email</strong><a href="mailto:reservations@renospa.example">reservations@renospa.example</a></div></div>
+            <div class="contact-item"><span class="ci-icon"><i class="fa-solid fa-location-dot"></i></span><div><strong>Address</strong><span>Mombasa Beach Road,<br>Mombasa, Kenya</span></div></div>
+            <div class="contact-item"><span class="ci-icon"><i class="fa-regular fa-clock"></i></span><div><strong>Reception</strong><span>Open 24 hours, 365 days a year</span></div></div>
+            <p class="fiction-note"><i class="fa-solid fa-circle-info"></i> Reno Spa is a fictional hotel created for a portfolio project.</p>
+          </div>
+
+          <form class="form-card reveal" id="contactForm" novalidate>
+            <h3 class="form-title">Send an Enquiry</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label for="ctName">Name *</label>
+                <input type="text" id="ctName" placeholder="Your full name" autocomplete="name">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="ctEmail">Email *</label>
+                <input type="email" id="ctEmail" placeholder="you@example.com" autocomplete="email">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field full">
+                <label for="ctPhone">Phone</label>
+                <input type="tel" id="ctPhone" placeholder="+44 …" autocomplete="tel">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field full">
+                <label for="ctMessage">Message *</label>
+                <textarea id="ctMessage" rows="5" placeholder="How can we help?"></textarea>
+                <span class="error-msg"></span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-navy btn-lg btn-block"><i class="fa-regular fa-paper-plane"></i> Send Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <span class="brand-crest"><i class="fa-solid fa-crown"></i></span>
+          <span class="brand-text"><strong>Reno Spa</strong><small>Mombasa, Kenya</small></span>
+        </a>
+        <p>A five-star sanctuary in on the Shores of Mombasa, offering timeless British hospitality, refined rooms and unforgettable dining since 1897.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.tripadvisor.co.uk/" target="_blank" rel="noopener" aria-label="Tripadvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#rooms">Rooms &amp; Suites</a></li>
+          <li><a href="#dining">Dining</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#offers">Special Offers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i> 1 Mombasa Beach Road, Mombasa, Kenya</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+254741158822">0741 158 822</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:reservations@renospa.example">reservations@renospa.example</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Newsletter</h4>
+        <p>Receive exclusive offers and news from Reno Spa.</p>
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <div class="field">
+            <input type="email" id="nlEmail" placeholder="Your email address" aria-label="Email address for newsletter">
+            <span class="error-msg"></span>
+          </div>
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Reno Spa. A fictional hotel created for portfolio purposes.</p>
+      <button type="button" class="staff-link" id="adminOpen"><i class="fa-solid fa-lock"></i> Staff Login</button>
+    </div>
+  </footer>
+
+  <!-- ================= MODALS ================= -->
+  <div class="modal" id="roomModal" role="dialog" aria-modal="true" aria-label="Room details">
+    <div class="modal-dialog modal-wide">
+      <button type="button" class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div id="roomModalBody"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-label="Booking confirmation">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close no-print" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div id="confirmBody"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-label="Staff area">
+    <div class="modal-dialog modal-xl">
+      <button type="button" class="modal-close" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div id="adminBody"></div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+    <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+    <figure>
+      <img id="lbImg" src="" alt="">
+      <figcaption><span id="lbCaption"></span> <em id="lbCount"></em></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <!-- SheetJS: creates the Excel (.xlsx) files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
