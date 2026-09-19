@@ -8,7 +8,7 @@
    --------------------------------------------------------- */
 const CONFIG = {
   hotelName: 'Reno Spa',
-  adminPassword: 'royale2026',        // Staff password (demo only – visible in code)
+  adminPassword: 'reno254',        // Staff password (demo only – visible in code)
   vatRate: 0.20,                      // UK VAT 20% (prices include VAT)
   googleSheetsWebhook: '',            // OPTIONAL: paste your Google Apps Script URL here
   storageKey: 'kr_orders_v1',
